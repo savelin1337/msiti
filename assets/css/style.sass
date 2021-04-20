@@ -1,0 +1,1044 @@
+@import "normalize"
+
+\:root
+  --red: #E52328
+  --black: #303233
+  --inactive: #303233
+  --blue: #010C5C
+  --gray: #969B9E
+
+@font-face
+  font-family: 'HeliosCond'
+  src: url('../fonts/HeliosCond-Bold.woff2') format('woff2'), url('../fonts/HeliosCond-Bold.woff') format('woff'), url('../fonts/HeliosCond-Bold.ttf') format('truetype')
+  font-weight: bold
+  font-style: normal
+  font-display: swap
+
+
+@font-face
+  font-family: 'HeliosCond'
+  src: url('../fonts/HeliosCond.woff2') format('woff2'), url('../fonts/HeliosCond.woff') format('woff'), url('../fonts/HeliosCond.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+
+
+body
+  font-family: 'HeliosCond', Arial, sans-serif
+  font-size: 16px
+  line-height: 24px
+  color: var(--black)
+
+.margin-top-48
+  margin-top: 48px
+a
+  text-decoration: none
+a.red
+  color: var(--red)
+  font-weight: bold
+
+p
+  margin: 0 0 8px
+
+.first-letter:first-letter
+  color: var(--red)
+
+h1, .h1
+  font-size: 26px
+  line-height: 40px
+  font-weight: bold
+  margin: 16px 0
+
+h2, .h2
+  font-size: 26px
+  line-height: 40px
+  text-transform: none
+  margin: 0 0 32px
+  &.small
+    font-size: 22px
+    line-height: 34px
+h3, .h3
+  font-size: 18px
+  line-height: 28px
+  text-transform: uppercase
+
+h4, .h4
+  font-size: 18px
+  line-height: 28px
+  font-weight: bold
+  margin: 32px 0 16px
+
+h5
+  font-size: 16px
+  line-height: 24px
+  font-weight: bold
+
+.p-0
+  padding: 0 !important
+main
+  ul
+    padding-left: 0
+    li
+      padding-left: 18px
+      list-style: none
+      margin-bottom: 8px
+      font-size: 16px
+      line-height: 24px
+      &:before
+        content: ''
+        display: inline-block
+        width: 10px
+        height: 10px
+        vertical-align: middle
+        -webkit-border-radius: 50%
+        -moz-border-radius: 50%
+        border-radius: 50%
+        background-color: var(--black)
+        margin-right: 8px
+        margin-left: -18px
+
+.container, .container-fluid
+  padding: 32px 10px
+
+.row
+  display: flex
+  flex-wrap: wrap
+
+.red
+  color: var(--red)
+
+.bold
+  font-weight: bold
+
+.d-none
+  display: none !important
+
+.navigation
+  height: 32px
+  margin: 48px 0 32px
+  display: flex
+  justify-content: center
+  .prev-slide, .next-slide
+    display: flex
+    width: 32px
+    height: 32px
+    background-size: contain
+  .prev-slide
+    margin-right: 16px
+    background-image: url("../img/arrow-left.svg")
+  .next-slide
+    background-image: url("../img/arrow-right.svg")
+
+.button
+  &.red
+    color: #ffffff
+    background-color: var(--red)
+  font-size: 18px
+  line-height: 28px
+  font-weight: 700
+  padding: 14px 22px
+  border-radius: 10px
+  text-align: center
+  display: block
+  color: var(--black)
+  background-color: #fff
+  margin: 32px auto
+
+.h4-underlined
+  border-bottom: 1px solid var(--red)
+  width: fit-content
+
+.mobile
+  display: block
+
+.desktop
+  display: none
+
+ul li.red-marker::before
+  background-color: var(--red)
+
+.card
+  position: relative
+  .backside, .frontside
+    position: absolute
+    left: 0
+    top: 0
+    padding: 16px
+    height: 100%
+    width: 100%
+    -webkit-transition: all 1s ease
+    -moz-transition: all 1s ease
+    -ms-transition: all 1s ease
+    -o-transition: all 1s ease
+    transition: all 1s ease
+    border-radius: 10px
+    overflow: hidden
+    -webkit-backface-visibility: hidden
+    -moz-backface-visibility: hidden
+    -ms-backface-visibility: hidden
+    backface-visibility: hidden
+  .backside
+    background-color: #fff
+    -webkit-transform: perspective(2000px) rotateY(180deg)
+    -moz-transform: perspective(2000px) rotateY(180deg)
+    -ms-transform: perspective(2000px) rotateY(180deg)
+    -o-transform: perspective(2000px) rotateY(180deg)
+    transform: perspective(2000px) rotateY(180deg)
+  .frontside
+    -webkit-transform: perspective(2000px) rotateY(0deg)
+    -moz-transform: perspective(2000px) rotateY(0deg)
+    -ms-transform: perspective(2000px) rotateY(0deg)
+    -o-transform: perspective(2000px) rotateY(0deg)
+    transform: perspective(2000px) rotateY(0deg)
+  &:hover
+    .backside
+      -webkit-transform: perspective(2000px) rotateY(0deg)
+      -moz-transform: perspective(2000px) rotateY(0deg)
+      -ms-transform: perspective(2000px) rotateY(0deg)
+      -o-transform: perspective(2000px) rotateY(0deg)
+      transform: perspective(2000px) rotateY(0deg)
+    .frontside
+      -webkit-transform: perspective(2000px) rotateY(-180deg)
+      -moz-transform: perspective(2000px) rotateY(-180deg)
+      -ms-transform: perspective(2000px) rotateY(-180deg)
+      -o-transform: perspective(2000px) rotateY(-180deg)
+      transform: perspective(2000px) rotateY(-180deg)
+
+.description-with-fade-in-right-images
+  .msi-fade-in-right-pictures
+    display: flex
+    justify-content: flex-end
+    overflow: hidden
+    height: fit-content
+    max-height: 100vw
+    img
+      width: 25%
+      object-fit: contain
+      display: block
+      height: auto
+  .left
+    padding-bottom: 32px
+header
+  height: 159px
+  width: 100%
+  position: sticky
+  top: 0
+  z-index: 5
+  overflow: hidden
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    width: 100%
+    height: 200px
+    top: -200px
+    left: 0
+    background-color: #fff
+  .bg
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: #fff
+    z-index: -1
+    -webkit-transition: all .1s linear
+    -moz-transition: all .1s linear
+    -ms-transition: all .1s linear
+    -o-transition: all .1s linear
+    transition: all .1s linear
+    &.bg-blue
+      -webkit-transform: translateX(100%)
+      -moz-transform: translateX(100%)
+      -ms-transform: translateX(100%)
+      -o-transform: translateX(100%)
+      transform: translateX(100%)
+      background-color: var(--blue)
+      -webkit-transition: all 1s ease
+      -moz-transition: all 1s ease
+      -ms-transition: all 1s ease
+      -o-transition: all 1s ease
+      transition: all 1s ease
+  .wrapper
+    padding: 32px 10px 0
+    display: flex
+    flex-wrap: wrap
+    position: relative
+    z-index: 1
+
+    .logos
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: space-between
+      div
+        width: 140px
+        height: 47px
+        background-size: contain
+        background-repeat: no-repeat
+        -webkit-transition: all .1s linear
+        -moz-transition: all .1s linear
+        -ms-transition: all .1s linear
+        -o-transition: all .1s linear
+        transition: all .1s linear
+        &.ranepa
+          background-image: url("../img/ranepa-logo.png")
+        &.msi
+          background-image: url("../img/msi-logo.png")
+
+    .header-buttons
+      width: 100%
+      margin-top: 32px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      a, .menu-button
+        font-size: 26px
+        line-height: 40px
+        color: var(--inactive)
+        background-size: contain
+        -webkit-transition: all .1s linear
+        -moz-transition: all .1s linear
+        -ms-transition: all .1s linear
+        -o-transition: all .1s linear
+        transition: all .1s linear
+      .button-wrapper, .lang-wrapper
+        display: flex
+        width: 100%
+      .button-wrapper
+        width: 60%
+        justify-content: space-between
+      .lang-wrapper
+        width: 40%
+      .lang-button
+        opacity: 0.5
+        margin-right: 32px
+        &.active
+          color: var(--red) !important
+          font-weight: 700
+          opacity: 1
+      .mdi-visibility
+        width: 48px
+        height: 48px
+        background-image: url("../img/mdi-visibility.svg")
+      .account
+        width: 48px
+        height: 48px
+        background-image: url("../img/account.svg")
+      .menu-button
+        width: 48px
+        height: 48px
+        background-image: url("../img/menu-button.svg")
+        cursor: pointer
+  &.white
+    .wrapper
+      .logos
+        .ranepa
+          background-image: url("../img/ranepa-logo.png")
+        .msi
+          background-image: url("../img/msi-logo.png")
+      .header-buttons
+        .mdi-visibility
+          background-image: url("../img/mdi-visibility.svg")
+        .account
+          background-image: url("../img/account.svg")
+        .menu-button
+          background-image: url("../img/menu-button.svg")
+        .lang-button
+          color: var(--black)
+
+.nav-outer
+  position: fixed
+  width: 100%
+  left: 100%
+  z-index: 2
+//height: calc(var(--vh, 1vh) * 100)
+nav
+  position: relative
+  width: 100%
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  -webkit-transform: translateX(0)
+  -moz-transform: translateX(0)
+  -ms-transform: translateX(0)
+  -o-transform: translateX(0)
+  transform: translateX(0)
+  top: 0
+  background-color: var(--blue)
+  -webkit-transition: all 1s ease
+  -moz-transition: all 1s ease
+  -ms-transition: all 1s ease
+  -o-transition: all 1s ease
+  transition: all 1s ease
+  padding: 162px 0 0 // 159 + 3 px отступа от хедера
+  .menu
+    list-style: none
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    margin: 0
+    height: 100%
+    padding: 0
+    li
+      &:before
+        content: ''
+        position: absolute
+        display: block
+        width: 31px
+        height: 24px
+        left: 10px
+        background: url("../img/menu-active.svg") no-repeat
+        background-size: contain
+        -webkit-transition: all .2s ease
+        -moz-transition: all .2s ease
+        -ms-transition: all .2s ease
+        -o-transition: all .2s ease
+        transition: all .2s ease
+        opacity: 0
+      margin: 0
+      color: #fff
+      font-size: 16px
+      line-height: 24px
+      font-weight: bold
+      padding: 0 10px 0 57px
+      flex: 1 1 auto
+      display: flex
+      align-items: center
+      position: relative
+      -webkit-transition: all .2s ease
+      -moz-transition: all .2s ease
+      -ms-transition: all .2s ease
+      -o-transition: all .2s ease
+      transition: all .2s ease
+      border-top: 1px solid transparent
+      border-bottom: 1px solid transparent
+      a
+        color: white
+        display: block
+        width: 100%
+      &:hover
+        background-color: rgba(151,181,203,0.2)
+        -webkit-border-image: linear-gradient(90deg, rgba(151, 182, 203, 0) 0%, rgba(151, 182, 203, 0) 15%, rgba(151, 182, 203, 0.8) 30%, #97B6CB 50%, rgba(151, 182, 203, 0.8) 70%, rgba(151, 182, 203, 0) 85%, rgba(151, 182, 203, 0) 100%)
+        -moz-border-image: linear-gradient(90deg, rgba(151, 182, 203, 0) 0%, rgba(151, 182, 203, 0) 15%, rgba(151, 182, 203, 0.8) 30%, #97B6CB 50%, rgba(151, 182, 203, 0.8) 70%, rgba(151, 182, 203, 0) 85%, rgba(151, 182, 203, 0) 100%)
+        -o-border-image: linear-gradient(90deg, rgba(151, 182, 203, 0) 0%, rgba(151, 182, 203, 0) 15%, rgba(151, 182, 203, 0.8) 30%, #97B6CB 50%, rgba(151, 182, 203, 0.8) 70%, rgba(151, 182, 203, 0) 85%, rgba(151, 182, 203, 0) 100%)
+        border-image: linear-gradient(90deg, rgba(151, 182, 203, 0) 0%, rgba(151, 182, 203, 0) 15%, rgba(151, 182, 203, 0.8) 30%, #97B6CB 50%, rgba(151, 182, 203, 0.8) 70%, rgba(151, 182, 203, 0) 85%, rgba(151, 182, 203, 0) 100%)
+        border-image-slice: 1
+        &:before
+          opacity: 1
+
+
+.menu-active
+  overflow: hidden
+  header
+    .bg.bg-blue
+      -webkit-transform: translateX(0)
+      -moz-transform: translateX(0)
+      -ms-transform: translateX(0)
+      -o-transform: translateX(0)
+      transform: translateX(0)
+  nav
+    -webkit-transform: translateX(-100%)
+    -moz-transform: translateX(-100%)
+    -ms-transform: translateX(-100%)
+    -o-transform: translateX(-100%)
+    transform: translateX(-100%)
+.opacity-0
+  opacity: 0
+
+.index-page main
+  margin-top: -159px
+
+.start-animation
+  opacity: 0
+
+#first
+  position: relative
+  .container
+    padding-top: 0
+    padding-bottom: 0
+  .carousel
+    .slide
+      &.s-1
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+        justify-content: flex-start
+      min-height: 100vh
+      min-height: calc(var(--vh-start, 1vh) * 100)
+      background-size: cover
+      &.dark
+        .h1
+          color: #fff
+      &.container
+        padding: 159px 10px 134px
+
+  .mobile .carousel .slide
+    @for $i from 1 through 9
+      &.s-#{$i}
+        background-image: url('../img/first-s-#{$i}-320w.jpg')
+
+  .button
+    margin: 0 10px
+    position: absolute
+    bottom: 78px
+    left: 0
+    width: calc(100% - 20px)
+    z-index: 1
+  .navigation
+    padding: 16px 10px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    z-index: 1
+    .prev-slide, .next-slide
+      display: flex
+      width: 32px
+      height: 32px
+      background-size: contain
+      -webkit-transition: all .1s linear
+      -moz-transition: all .1s linear
+      -ms-transition: all .1s linear
+      -o-transition: all .1s linear
+      transition: all .1s linear
+    .prev-slide
+      margin-right: 16px
+      background-image: url("../img/arrow-left.svg")
+    .next-slide
+      background-image: url("../img/arrow-right.svg")
+    .progress-bar
+      margin: 0 16px
+      flex-grow: 1
+      min-width: 100px
+      height: 2px
+      background-color: #010C5C
+      position: relative
+      .stroke
+        position: absolute
+        height: 2px
+        background-color: var(--red)
+        width: 0
+        -webkit-transition: all .1s ease-in-out
+        -moz-transition: all .1s ease-in-out
+        -ms-transition: all .1s ease-in-out
+        -o-transition: all .1s ease-in-out
+        transition: all .1s ease-in-out
+
+    .progress-text
+      font-size: 30px
+      line-height: 46px
+      color: var(--black)
+      font-weight: bold
+      -webkit-transition: all .1s linear
+      -moz-transition: all .1s linear
+      -ms-transition: all .1s linear
+      -o-transition: all .1s linear
+      transition: all .1s linear
+    > *
+      flex-grow: 0
+
+
+  .counter-wrapper
+    display: flex
+    margin: 0 -10px
+    flex-wrap: wrap
+    justify-content: center
+    > div
+      margin: 0 10px
+      flex-grow: 1
+      > div
+        margin-bottom: 10px
+    .counter
+      font-size: 18px
+      font-weight: bold
+      line-height: 28px
+      color: var(--red)
+      display: block
+    .desc
+      font-size: 16px
+      line-height: 24px
+
+.dark
+  header
+    .logos
+      div
+        &.ranepa
+          background-image: url("../img/white-ranepa-logo.png")
+        &.msi
+          background-image: url("../img/white-msi-logo.png")
+    .header-buttons
+      .mdi-visibility
+        background-image: url("../img/white-mdi-visibility.svg")
+      .account
+        background-image: url("../img/white-account.svg")
+      .menu-button
+        background-image: url("../img/white-menu-button.svg")
+      .lang-button
+        color: #ffffff
+  #first
+    .navigation
+      .progress-text
+        color: #fff
+      .prev-slide
+        background-image: url("../img/white-arrow-left.svg")
+      .next-slide
+        background-image: url("../img/white-arrow-right.svg")
+
+@media (max-width: 1199px)
+  .menu-active
+    header
+      .logos
+        div
+          &.ranepa
+            background-image: url("../img/white-ranepa-logo.png") !important
+          &.msi
+            background-image: url("../img/white-msi-logo.png") !important
+
+.menu-active
+  header
+    .header-buttons
+      .mdi-visibility
+        background-image: url("../img/white-mdi-visibility.svg") !important
+      .account
+        background-image: url("../img/white-account.svg") !important
+      .menu-button
+        background-image: url("../img/white-menu-button.svg") !important
+      .lang-button
+        color: #ffffff !important
+
+
+#higher-edu
+  .container
+    padding: 32px 10px 0
+  h2
+    margin-bottom: 32px
+
+#cpe-programs
+  h3
+    margin: 0 0 48px
+  .program
+    padding: 32px 10px
+    .button
+      margin-bottom: 0
+    a
+      display: block
+      margin-bottom: 16px
+      color: white
+    &.red
+      background-color: var(--red)
+      color: white
+      .button
+        color: var(--black)
+    &.gray
+      background-color: #DFE6EB
+      a
+        color: var(--black)
+    &.blue
+      background-color: var(--blue)
+      color: white
+      .button
+        color: var(--black)
+
+#special-programs
+  overflow: hidden
+  .container
+    padding-top: 0
+  h2
+    margin: 32px 0
+  .button
+    margin-bottom: 0
+
+#about-dep
+  .container
+    padding-top: 0
+    padding-bottom: 0
+  .left
+    margin-bottom: 48px
+
+.hover-red
+  -webkit-transition: all .5s ease
+  -moz-transition: all .5s ease
+  -ms-transition: all .5s ease
+  -o-transition: all .5s ease
+  transition: all .5s ease
+
+.hover-red:hover
+  font-weight: bold
+  color: var(--red)
+  ul li::before
+    background-color: var(--red)
+
+.advantages
+  overflow: hidden
+  .container
+    margin: 0 auto
+    padding: 32px 0 48px
+  .main-container
+    margin: 0 auto
+    padding: 0
+  .h2-wrapper
+    padding: 0
+  h2
+    margin: 0
+  h4
+    margin: 0 0 32px
+  h5
+    margin: 16px 0 8px
+
+  .advantage
+    padding: 48px 0 0
+    .img-wrapper
+      margin: 32px -10px 0
+      left: 100%
+      -webkit-transform: translateX(100%)
+      -moz-transform: translateX(100%)
+      -ms-transform: translateX(100%)
+      -o-transform: translateX(100%)
+      transform: translateX(100%)
+      -webkit-transition: all .6s ease-in
+      -moz-transition: all .6s ease-in
+      -ms-transition: all .6s ease-in
+      -o-transition: all .6s ease-in
+      transition: all .6s ease-in
+      img
+        object-fit: cover
+        width: 100%
+        height: 100vw
+        display: block
+    &:nth-child(odd)
+      .img-wrapper
+        left: inherit
+        right: 100%
+        -webkit-transform: translateX(-100%)
+        -moz-transform: translateX(-100%)
+        -ms-transform: translateX(-100%)
+        -o-transform: translateX(-100%)
+        transform: translateX(-100%)
+
+    &.show
+      .img-wrapper, .advantage-inner
+        -webkit-transform: translate(0) !important
+        -moz-transform: translate(0)!important
+        -ms-transform: translate(0)!important
+        -o-transform: translate(0)!important
+        transform: translate(0)!important
+
+#graduates
+  .container
+    padding-top: 32px
+    padding-bottom: 32px
+  h2
+    margin: 0 0 32px
+  h4
+    margin: 0
+  .carousel
+    margin: -16px auto
+  .card
+    .frontside, .backside
+      border: 1px solid var(--red)
+  .slide
+    .description
+      .paragraph
+        margin-bottom: 16px
+        p
+          margin-bottom: 8px
+          font-size: 14px
+          line-height: 22px
+    position: relative
+    height: 700px
+    margin: 48px 0
+    .bg
+      margin-left: -16px
+      margin-top: -16px
+      position: absolute
+      width: 100%
+      height: 100%
+      object-fit: cover
+      z-index: -1
+      img
+        height: inherit
+        width: 100%
+        object-fit: cover
+    h4
+      margin: 0
+    .position
+      font-size: 14px
+      line-height: 22px
+      font-weight: bold
+    .social-buttons
+      display: flex
+      margin: 16px 0
+      img
+        margin-right: 16px
+        width: 32px
+        height: 32px
+  .navigation
+    height: 32px
+    margin: 48px 0 32px
+    display: flex
+    justify-content: center
+
+#partners
+  .container
+    padding-top: 32px
+    padding-bottom: 0
+  .owl-carousel
+    .owl-stage
+      display: flex
+      align-items: center
+      padding: 50px 0
+      img
+        -webkit-transition: all .2s ease-in-out
+        -moz-transition: all .2s ease-in-out
+        -ms-transition: all .2s ease-in-out
+        -o-transition: all .2s ease-in-out
+        transition: all .2s ease-in-out
+        filter: grayscale(1)
+      .center-item
+        -webkit-transform: scale(2)
+        -moz-transform: scale(2)
+        -ms-transform: scale(2)
+        -o-transform: scale(2)
+        transform: scale(2)
+        filter: none
+      .side-item
+        -webkit-transform: scale(2)
+        -moz-transform: scale(2)
+        -ms-transform: scale(2)
+        -o-transform: scale(2)
+        transform: scale(2)
+  .navigation
+    height: 32px
+    margin: 16px 0 32px
+    display: flex
+    justify-content: center
+
+.project-center
+  .container
+    padding-top: 32px
+    padding-bottom: 0
+
+.simple-card-block
+  .mobile
+    overflow: hidden
+  .container
+    padding-bottom: 0
+  .card
+    border-radius: 10px
+    padding: 16px
+    min-height: 300px
+    width: 100%
+    background-size: cover
+    margin: 16px auto
+    .frontside, .backside
+      background-size: cover
+    .backside::before
+      content: ""
+      position: absolute
+      width: 100%
+      height: 100%
+      background: rgb(1, 12, 92)
+      opacity: 0.4
+      top: 0
+      left: 0
+      z-index: -1
+    .backside
+      h4, p
+        color: #fff
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      .button
+        margin: 0
+    h4
+      margin-top: 0
+    p
+      font-size: 16px
+      line-height: 24px
+      margin-bottom: 0px
+
+@import "select2"
+.select2-results__option
+  font-weight: bold
+  padding: 16px
+
+.form
+  .h2
+    color: white
+    margin-bottom: 48px
+    font-weight: bold
+  &.done
+    background: url("../img/finished_form.svg")
+    background-size: cover
+  background-color: var(--red)
+  padding: 16px
+  margin: 0
+  border-radius: 10px
+  .select2-container--default .select2-selection--single
+    border: none
+    outline: none
+  .select2-container .select2-selection--single .select2-selection__rendered
+    padding-left: 0
+    font-weight: bold
+  .input-wrapper
+    border-radius: 10px
+    margin: 16px auto
+    width: 100%
+    background-color: white
+    padding: 16px
+    input, textarea
+      color: var(--black)
+      font-size: 16px
+      font-family: "HeliosCond", Arial, sans-serif
+      font-weight: bold
+      border: none
+      outline: none
+      width: 100%
+      height: 32px
+      padding: 0
+      &:invalid, &:valid
+        background-position: right top
+        background-size: 32px 32px
+        background-repeat: no-repeat
+      &:invalid
+        background-image: url("../img/mdi_invalid.svg")
+      &:valid
+        background-image: url("../img/mdi_valid.svg")
+    textarea
+      height: 100px
+      resize: none
+    select
+      width: 100%
+      border: none
+      font-size: 16px
+      font-family: "HeliosCond", Arial, sans-serif
+      font-weight: bold
+      outline: none
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+      option
+        font-weight: bold
+
+  input[type=submit]
+    border: none
+    width: 100%
+    margin-bottom: 16px
+
+  .form-message
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    p
+      color: #fff
+      font-size: 30px
+      line-height: 46px
+      text-align: center
+      font-weight: bold
+#feedback
+  h2, .h2
+    margin-top: 0
+  .container
+    padding-top: 32px
+    .left
+      margin-bottom: 48px
+
+#map
+  width: 100%
+  max-height: 60vh
+  img
+    width: 100%
+
+footer
+  .container
+    padding-bottom: 0
+  background-color: var(--blue)
+  .button
+    margin-bottom: 16px
+    width: 100%
+  .logo img
+    width: 100%
+  a, h4, p
+    color: white
+  h4
+    font-size: 16px
+    line-height: 24px
+    margin: 0 0 8px
+  .row
+    margin-right: -10px
+  .row.mobile
+    display: flex
+  .footer-menu-group
+    width: 50%
+    margin-top: 16px
+    padding-right: 4px
+    div
+      margin-bottom: 16px
+    a
+      display: block
+      font-size: 14px
+      line-height: 22px
+      margin-bottom: 4px
+
+
+  .address
+    font-size: 14px
+    line-height: 22px
+
+  .copyright
+    padding: 16px 0
+    background-color: rgba(48,50,51,0.5)
+    p
+      text-align: center
+      font-size: 14px
+      line-height: 22px
+      margin: 0
+
+.contacts
+  a
+    display: block
+  img
+    width: 32px
+    height: 32px
+    margin-right: 8px
+  .phone, .e-mail
+    display: flex
+    align-items: center
+    margin-bottom: 8px
+.social-buttons
+  margin-bottom: 32px
+  img
+    margin-right: 32px
+
+.ymaps-layers-pane
+  -webkit-filter: grayscale(100%)
+
+.msi-fade-in-right-pictures img
+  opacity: 0
+
+@import "jquery.fancybox"
+
+.popup-form
+  background-color: transparent
+  display: none
+  padding: 0
+  border-radius: 10px
+  .form
+    background-color: var(--red)
+    &.done
+      background: url("../img/finished_form.svg")
+      background-size: cover
+  min-width: 100%
+  .fancybox-button svg
+    color: #fff
+
+.popup-login
+  .form
+    padding: 48px 16px
+
+@import "inner"
+@import "media"
+@import "inner-media"
