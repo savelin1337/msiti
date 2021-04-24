@@ -761,10 +761,6 @@ jQuery(document).ready(function ($) {
 
     secondTransition($('#higher-edu'));
 
-    $('.msi-select2').select2({
-        minimumResultsForSearch: Infinity
-    });
-
     $('.feedback').submit(function () {
         let form = $(this);
         let height = form.height() + 32;
