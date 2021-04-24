@@ -305,7 +305,7 @@
 <div class="popup-form" id="popup-form">
     <form id="popup-feedback" class="form feedback" method="post" action="">
         <div class="input-wrapper">
-            <input type="text" name="Имя" placeholder="Имя" required>
+            <input type="text" name="Имя" placeholder="Имя" minlength="2" maxlength="20" required>
         </div>
         <div class="input-wrapper">
             <input type="email" name="E-mail" placeholder="E-mail" required>
@@ -318,7 +318,7 @@
             </select>
         </div>
         <div class="input-wrapper">
-            <textarea name="Вопрос" placeholder="Ваш вопрос" required></textarea>
+            <textarea name="Вопрос" placeholder="Ваш вопрос" minlength="5" maxlength="2000" required></textarea>
         </div>
         <input type="submit" class="button" value="Задать&nbsp;вопрос">
     </form>

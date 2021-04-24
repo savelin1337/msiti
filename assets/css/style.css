@@ -1758,10 +1758,12 @@ nav {
         background-position: right top;
         background-size: 32px 32px;
         background-repeat: no-repeat; }
-      .form .input-wrapper input:invalid, .form .input-wrapper textarea:invalid {
+      .form .input-wrapper input:invalid:not(:placeholder-shown), .form .input-wrapper textarea:invalid:not(:placeholder-shown) {
         background-image: url("../img/mdi_invalid.svg"); }
-      .form .input-wrapper input:valid, .form .input-wrapper textarea:valid {
+      .form .input-wrapper input:valid:not(:placeholder-shown), .form .input-wrapper textarea:valid:not(:placeholder-shown) {
         background-image: url("../img/mdi_valid.svg"); }
+      .form .input-wrapper input:focus, .form .input-wrapper textarea:focus {
+        background-image: none; }
     .form .input-wrapper textarea {
       height: 100px;
       resize: none; }
@@ -2642,7 +2644,7 @@ body.compensate-for-scrollbar {
   .breadcrumbs a {
     color: var(--black);
     text-decoration: none; }
-  .breadcrumbs span {
+  .breadcrumbs span.last {
     color: var(--red);
     font-weight: bold; }
 

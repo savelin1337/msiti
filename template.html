@@ -49,8 +49,21 @@
     </div>
 </header>
 <main>
-    <div itemscope itemtype="http://schema.org/BreadcrumbList" class="container breadcrumbs">
-        <a href="/">Главная</a> / <a href="/higher-education.html">Высшее образование</a> / <span>Проектный центр МСиТИ</span>
+    <div class="container breadcrumbs">
+    <span itemscope itemtype="http://schema.org/BreadcrumbList">
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="/">
+                <span itemprop="name">Главная</span></a>
+            <meta itemprop="position" content="1"/>
+        </span>
+        /
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/higher-education.html">
+            <span itemprop="name">Высшее образование</span></a>
+            <meta itemprop="position" content="2"/>
+        </span>
+        / <span class="last">Проектный центр МСиТИ</span>
+    </span>
     </div>
 </main>
 <footer>
@@ -198,7 +211,7 @@
 <div class="popup-form" id="popup-form">
     <form id="popup-feedback" class="form feedback" method="post" action="">
         <div class="input-wrapper">
-            <input type="text" name="Имя" placeholder="Имя" required>
+            <input type="text" name="Имя" placeholder="Имя" minlength="2" maxlength="20" required>
         </div>
         <div class="input-wrapper">
             <input type="email" name="E-mail" placeholder="E-mail" required>
@@ -211,7 +224,7 @@
             </select>
         </div>
         <div class="input-wrapper">
-            <textarea name="Вопрос" placeholder="Ваш вопрос" required></textarea>
+            <textarea name="Вопрос" placeholder="Ваш вопрос" minlength="5" maxlength="2000" required></textarea>
         </div>
         <input type="submit" class="button" value="Задать&nbsp;вопрос">
     </form>

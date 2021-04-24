@@ -903,10 +903,16 @@ nav
         background-position: right top
         background-size: 32px 32px
         background-repeat: no-repeat
-      &:invalid
+      //&:invalid
+      //  background-image: url("../img/mdi_invalid.svg")
+      //&:valid
+      //  background-image: url("../img/mdi_valid.svg")
+      &:invalid:not(:placeholder-shown)
         background-image: url("../img/mdi_invalid.svg")
-      &:valid
+      &:valid:not(:placeholder-shown)
         background-image: url("../img/mdi_valid.svg")
+      &:focus
+        background-image: none
     textarea
       height: 100px
       resize: none
