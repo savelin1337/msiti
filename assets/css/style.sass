@@ -6,6 +6,11 @@
   --inactive: #303233
   --blue: #010C5C
   --gray: #969B9E
+  --h-height-320: 159px
+  --h-height-375: 195px
+  --h-height-1200: 98px
+  --h-height-1440: 105px
+  --h-height-1920: 148px
 
 @font-face
   font-family: 'HeliosCond'
@@ -451,7 +456,7 @@ nav
 .start-animation
   opacity: 0
 
-#first
+.first-sec
   position: relative
   .container
     padding-top: 0
@@ -578,7 +583,7 @@ nav
         background-image: url("../img/white-menu-button.svg")
       .lang-button
         color: #ffffff
-  #first
+  .first-sec
     .navigation
       .progress-text
         color: #fff
@@ -610,15 +615,17 @@ nav
         color: #ffffff !important
 
 
-#higher-edu
+.higher-edu
   .container
     padding: 32px 10px 0
   h2, .h2
     margin-bottom: 32px
 
-#cpe-programs
+.cpe-programs
   h3, .h3
     margin: 0 0 48px
+    font-size: 30px
+    line-height: 46px
   .program
     padding: 32px 10px
     .button
@@ -642,7 +649,7 @@ nav
       .button
         color: var(--black)
 
-#special-programs
+.special-programs
   overflow: hidden
   .container
     padding-top: 0
@@ -651,7 +658,7 @@ nav
   .button
     margin-bottom: 0
 
-#about-dep
+.about-dep
   .container
     padding-top: 0
     padding-bottom: 0
@@ -726,7 +733,7 @@ nav
         -o-transform: translate(0)!important
         transform: translate(0)!important
 
-#graduates
+.graduates
   .container
     padding-top: 32px
     padding-bottom: 32px
@@ -781,7 +788,7 @@ nav
     display: flex
     justify-content: center
 
-#partners
+.partners-sec
   .container
     padding-top: 32px
     padding-bottom: 0
@@ -912,7 +919,7 @@ nav
       &:valid:not(:placeholder-shown)
         background-image: url("../img/mdi_valid.svg")
       &:focus
-        background-image: none
+        background-image: none!important
     textarea
       height: 100px
       resize: none
@@ -946,7 +953,7 @@ nav
       line-height: 46px
       text-align: center
       font-weight: bold
-#feedback
+.feedback-sec
   h2, .h2
     margin-top: 0
   .container
@@ -954,7 +961,7 @@ nav
     .left
       margin-bottom: 48px
 
-#map
+.map
   width: 100%
   max-height: 60vh
   img

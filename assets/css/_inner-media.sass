@@ -1,4 +1,8 @@
 @media (min-width: 375px)
+  .first
+    .full-height-container
+      padding-top: var(--h-height-375)
+
   .full-wide-blocks-3
     margin: 0 -23px
     .fwb3-block
@@ -20,6 +24,42 @@
       height: 555px
 
 @media (min-width: 1200px)
+  .first
+    .full-height-container
+      padding-top: var(--h-height-1200)
+
+  .error-page
+    main
+      > .container
+        h1, .h1
+          font-size: 80px
+          line-height: 120px
+          margin: 0 0 48px
+        .subtitle
+          font-size: 22px
+          line-height: 34px
+          margin: 0 0 48px
+        p
+          font-size: 16px
+          line-height: 24px
+        .button
+          margin: 48px 0 0
+
+  .e-404
+    main
+      background-image: url("../img/404-bg-desktop.jpg")
+      > .container
+        h1, .h1
+          margin: 0 0 32px
+
+  .e-updating
+    main
+      background-image: url("../img/updating-bg-desktop.jpg")
+
+  .e-under-construction
+    main
+      background-image: url("../img/under-construction-bg-desktop.jpg")
+
   .project-center-msiti
     .right.msi-fade-in-right-pictures
       margin-bottom: 0
@@ -438,6 +478,9 @@
         line-height: 68px
 
 @media (min-width: 1400px)
+  .first
+    .full-height-container
+      padding-top: var(--h-height-1440)
   .project
     h5, .h5
       margin: 16px 0 32px
@@ -597,6 +640,9 @@
         line-height: 120px
 
 @media (min-width: 1800px)
+  .first
+    .full-height-container
+      padding-top: var(--h-height-1920)
   .project
     h5, .h5
       font-size: 30px

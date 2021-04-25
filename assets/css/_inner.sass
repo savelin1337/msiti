@@ -11,6 +11,70 @@
     color: var(--red)
     font-weight: bold
 
+.full-height-container
+  min-height: 100vh
+
+.first
+  .full-height-container
+    padding-top: var(--h-height-320)
+
+.error-page
+  main
+    background-size: cover
+    background-position: center center
+    > .container
+      display: flex
+      align-items: center
+      h1, .h1
+        font-size: 30px
+        line-height: 46px
+        text-transform: uppercase
+        margin: 0 0 48px
+        font-weight: bold
+      .subtitle
+        font-size: 22px
+        line-height: 34px
+        margin: 0 0 24px
+        font-weight: bold
+      p
+        font-size: 14px
+        line-height: 22px
+        font-weight: bold
+        a
+          color: var(--red)
+          font-weight: bold
+      .button
+        margin: 32px 0 0
+
+.e-404
+  main
+    background-image: url("../img/404-bg.jpg")
+    > .container
+      h1, .h1
+        color: var(--red)
+        margin: 0 0 16px
+        font-size: 46px
+        line-height: 68px
+      .subtitle
+        color: #fff
+      p
+        color: #fff
+        a
+          color: var(--red)
+
+.e-updating
+  main
+    background-image: url("../img/updating-bg.jpg")
+
+.e-under-construction
+  main
+    background-image: url("../img/under-construction-bg.jpg")
+    > .container
+      h1, .h1
+        color: #fff
+      p
+        color: #fff
+
 .project-center-msiti
   .container
     padding-top: 0
