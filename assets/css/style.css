@@ -1102,6 +1102,8 @@ nav {
 .project-center .container {
   padding-top: 32px;
   padding-bottom: 0; }
+.project-center .msi-fade-in-right-pictures {
+  overflow: hidden; }
 
 .simple-card-block .mobile {
   overflow: hidden; }
