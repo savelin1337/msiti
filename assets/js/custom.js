@@ -588,21 +588,37 @@ jQuery(document).ready(function ($) {
 
     secondTransition($('#higher-edu'));
 
+    $(':input').on('propertychange input', function (e) {
+        $(this)[0].setCustomValidity("");
+        $('.error-field').html("");
+    });
+
+
     $('.feedback').submit(function () {
         let form = $(this);
-        let height = form.height() + 32;
-        form.css('height', height);
-        $.post(
-            'post.php', // адрес обработчика
-            $(this).serialize(), // отправляемые данные
+        let errorField = $(this).find(".error-field");
 
-            function (msg) { // получен ответ сервера
-                console.log('yes');
-                // $(this).hide('slow');
-                form.html(msg);
-                form.addClass('done');
+        $.ajax({
+            url: '/post.php',
+            type: 'POST',
+            data: $(this).serialize()
+        }).done(function(data) {
+            let height = form.height() + 32;
+            form.css('height', height);
+            let answer = JSON.parse(data);
+            form.html("<div class=\"form-message\"><p>" + answer.message + "</p></div>");
+            form.addClass('done');
+        }).fail(function(data) {
+            let answer = JSON.parse(data.responseText).errors;
+            let errorHTML = "";
+            for (let key in answer) {
+                let field = form[0].querySelector("[name='" + key + "']");
+                field.setCustomValidity(answer[key]);
+             //   field.focus();
+                errorHTML += answer[key] + "<br>";
             }
-        );
+            errorField.html(errorHTML);
+        });
         return false;
     });
 

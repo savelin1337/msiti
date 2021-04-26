@@ -1182,7 +1182,7 @@ nav {
     margin-bottom: 48px;
     font-weight: bold; }
   .form.done {
-    background: url("../img/finished_form.svg");
+    background: url("../img/finished_form.svg") top center;
     background-size: cover; }
   .form .input-wrapper {
     border-radius: 10px;
@@ -1208,10 +1208,8 @@ nav {
         background-image: url("../img/mdi_invalid.svg"); }
       .form .input-wrapper input:valid:not(:placeholder-shown), .form .input-wrapper textarea:valid:not(:placeholder-shown) {
         background-image: url("../img/mdi_valid.svg"); }
-      .form .input-wrapper input:focus, .form .input-wrapper textarea:focus {
-        background-image: none !important; }
     .form .input-wrapper textarea {
-      height: 100px;
+      height: 6em;
       resize: none; }
     .form .input-wrapper select {
       width: 100%;
@@ -1221,7 +1219,7 @@ nav {
       font-weight: bold;
       outline: none;
       padding: 22px 0;
-      -webkit-appearance: menulist-button; }
+      -webkit-appearance: none; }
       .form .input-wrapper select option {
         font-weight: bold; }
   .form .input-wrapper-select {
@@ -1242,6 +1240,11 @@ nav {
       line-height: 46px;
       text-align: center;
       font-weight: bold; }
+  .form .error-field {
+    padding: 0;
+    color: #fff;
+    font-weight: bold;
+    margin: 0; }
 
 .feedback-sec h2, .feedback-sec .h2 {
   margin-top: 0; }
@@ -1272,7 +1275,8 @@ footer {
     line-height: 24px;
     margin: 0 0 8px; }
   footer .row {
-    margin-right: -10px; }
+    margin-right: -10px;
+    width: 100%; }
   footer .row.mobile {
     display: flex; }
   footer .footer-menu-group {
@@ -2075,7 +2079,7 @@ body.compensate-for-scrollbar {
   .popup-form .form {
     background-color: var(--red); }
     .popup-form .form.done {
-      background: url("../img/finished_form.svg");
+      background: url("../img/finished_form.svg") top center;
       background-size: cover; }
   .popup-form .fancybox-button svg {
     color: #fff; }
@@ -3471,8 +3475,6 @@ body.compensate-for-scrollbar {
     padding: 16px 32px; }
     .form .input-wrapper {
       padding: 16px; }
-      .form .input-wrapper textarea {
-        height: 146px; }
     .form input[type=submit] {
       width: fit-content; }
     .form .form-message p {

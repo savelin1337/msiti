@@ -908,7 +908,7 @@ nav
     margin-bottom: 48px
     font-weight: bold
   &.done
-    background: url("../img/finished_form.svg")
+    background: url("../img/finished_form.svg") top center
     background-size: cover
   background-color: var(--red)
   padding: 16px
@@ -942,10 +942,9 @@ nav
         background-image: url("../img/mdi_invalid.svg")
       &:valid:not(:placeholder-shown)
         background-image: url("../img/mdi_valid.svg")
-      &:focus
-        background-image: none!important
+
     textarea
-      height: 100px
+      height: 6em
       resize: none
     select
       width: 100%
@@ -955,7 +954,7 @@ nav
       font-weight: bold
       outline: none
       padding: 22px 0
-      -webkit-appearance: menulist-button
+      -webkit-appearance: none
       option
         font-weight: bold
 
@@ -979,6 +978,12 @@ nav
       line-height: 46px
       text-align: center
       font-weight: bold
+
+  .error-field
+    padding: 0
+    color: #fff
+    font-weight: bold
+    margin: 0
 .feedback-sec
   h2, .h2
     margin-top: 0
@@ -1010,6 +1015,7 @@ footer
     margin: 0 0 8px
   .row
     margin-right: -10px
+    width: 100%
   .row.mobile
     display: flex
   .footer-menu-group
@@ -1070,7 +1076,7 @@ footer
   .form
     background-color: var(--red)
     &.done
-      background: url("../img/finished_form.svg")
+      background: url("../img/finished_form.svg") top center
       background-size: cover
   min-width: 100%
   .fancybox-button svg
