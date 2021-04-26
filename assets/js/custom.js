@@ -598,6 +598,8 @@ jQuery(document).ready(function ($) {
         let form = $(this);
         let errorField = $(this).find(".error-field");
 
+        let button = $(this).find('.button');
+        button.prop('disabled', true);
         $.ajax({
             url: '/post.php',
             type: 'POST',
@@ -618,6 +620,7 @@ jQuery(document).ready(function ($) {
                 errorHTML += answer[key] + "<br>";
             }
             errorField.html(errorHTML);
+            button.prop('disabled', false);
         });
         return false;
     });

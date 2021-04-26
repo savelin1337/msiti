@@ -455,6 +455,8 @@ main ul {
   .button.red {
     color: #ffffff;
     background-color: var(--red); }
+  .button:disabled, .button[disabled] {
+    opacity: 0.5; }
 
 .h4-underlined {
   border-bottom: 1px solid var(--red);
