@@ -384,6 +384,7 @@ nav
     margin: 0
     height: 100%
     padding: 0
+    overflow: auto
     li
       &:before
         content: ''
@@ -417,6 +418,7 @@ nav
       transition: all .2s ease
       border-top: 1px solid transparent
       border-bottom: 1px solid transparent
+      min-height: 60px
       a
         color: white
         display: block
@@ -593,14 +595,44 @@ nav
         background-image: url("../img/white-arrow-right.svg")
 
 @media (max-width: 1199px)
+  .small-menu
+    header
+      .bg
+        opacity: 1
+      height: 96px
+      .wrapper
+        justify-content: space-between
+        padding: 24px
+        .logos
+          width: 50%
+          .ranepa
+            background-size: cover
+            width: 50px
+          .msi
+            background-size: cover
+            width: 60px
+        .header-buttons
+          width: 50%
+          margin-top: 0
+          justify-content: flex-end
+          .lang-wrapper
+            opacity: 0
+            width: 0
+            display: none
+          .button-wrapper
+            .account
+              width: 0
+
   .menu-active
     header
-      .logos
-        div
-          &.ranepa
-            background-image: url("../img/white-ranepa-logo.png") !important
-          &.msi
-            background-image: url("../img/white-msi-logo.png") !important
+      .wrapper
+        .logos
+          div
+            &.ranepa
+              background-image: url("../img/white-ranepa-logo.png") !important
+            &.msi
+              background-image: url("../img/white-msi-logo.png") !important
+
 
 .menu-active
   header

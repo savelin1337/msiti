@@ -681,7 +681,8 @@ nav {
     justify-content: space-between;
     margin: 0;
     height: 100%;
-    padding: 0; }
+    padding: 0;
+    overflow: auto; }
     nav .menu li {
       margin: 0;
       color: #fff;
@@ -699,7 +700,8 @@ nav {
       -o-transition: all 0.2s ease;
       transition: all 0.2s ease;
       border-top: 1px solid transparent;
-      border-bottom: 1px solid transparent; }
+      border-bottom: 1px solid transparent;
+      min-height: 60px; }
       nav .menu li:before {
         content: "";
         position: absolute;
@@ -890,9 +892,35 @@ nav {
   background-image: url("../img/white-arrow-right.svg"); }
 
 @media (max-width: 1199px) {
-  .menu-active header .logos div.ranepa {
+  .small-menu header {
+    height: 96px; }
+    .small-menu header .bg {
+      opacity: 1; }
+    .small-menu header .wrapper {
+      justify-content: space-between;
+      padding: 24px; }
+      .small-menu header .wrapper .logos {
+        width: 50%; }
+        .small-menu header .wrapper .logos .ranepa {
+          background-size: cover;
+          width: 50px; }
+        .small-menu header .wrapper .logos .msi {
+          background-size: cover;
+          width: 60px; }
+      .small-menu header .wrapper .header-buttons {
+        width: 50%;
+        margin-top: 0;
+        justify-content: flex-end; }
+        .small-menu header .wrapper .header-buttons .lang-wrapper {
+          opacity: 0;
+          width: 0;
+          display: none; }
+        .small-menu header .wrapper .header-buttons .button-wrapper .account {
+          width: 0; }
+
+  .menu-active header .wrapper .logos div.ranepa {
     background-image: url("../img/white-ranepa-logo.png") !important; }
-  .menu-active header .logos div.msi {
+  .menu-active header .wrapper .logos div.msi {
     background-image: url("../img/white-msi-logo.png") !important; } }
 .menu-active header .header-buttons .mdi-visibility {
   background-image: url("../img/white-mdi-visibility.svg") !important; }
@@ -3392,7 +3420,7 @@ body.compensate-for-scrollbar {
   .form .input-wrapper {
     padding: 20px 16px; }
 
-  #map {
+  .map {
     height: 618px; }
 
   footer h4 {
@@ -3897,31 +3925,31 @@ body.compensate-for-scrollbar {
           padding-top: 48px;
           max-height: 351px; }
 
-  #special-programs .container {
+  .special-programs .container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 48px 0 0; }
-    #special-programs .container .left {
+    .special-programs .container .left {
       width: 55%; }
-    #special-programs .container .right {
+    .special-programs .container .right {
       width: 45%;
       display: flex;
       justify-content: flex-end;
       align-items: center; }
-      #special-programs .container .right img {
+      .special-programs .container .right img {
         display: block;
         margin-left: 7px;
         width: 106px; }
-        #special-programs .container .right img:first-child {
+        .special-programs .container .right img:first-child {
           margin-left: 0; }
-  #special-programs h4, #special-programs .h4 {
+  .special-programs h4, .special-programs .h4 {
     font-size: 26px;
     line-height: 40px; }
-  #special-programs p {
+  .special-programs p {
     font-size: 14px;
     line-height: 22px; }
-  #special-programs .button {
+  .special-programs .button {
     margin-bottom: 32px; }
 
   .about-dep .container {
@@ -4242,13 +4270,13 @@ body.compensate-for-scrollbar {
       line-height: 34px;
       margin-bottom: 24px; }
 
-  #special-programs h4, #special-programs .h4 {
+  .special-programs h4, .special-programs .h4 {
     font-size: 30px;
     line-height: 46px; }
-  #special-programs p {
+  .special-programs p {
     font-size: 16px;
     line-height: 24px; }
-  #special-programs .container .right img {
+  .special-programs .container .right img {
     width: 110px; }
 
   .about-dep p {
