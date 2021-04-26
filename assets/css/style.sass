@@ -276,7 +276,8 @@ header
       display: flex
       align-items: center
       justify-content: space-between
-      div
+      a
+        display: block
         width: 140px
         height: 47px
         background-size: contain
@@ -901,11 +902,6 @@ nav
       line-height: 24px
       margin-bottom: 0px
 
-@import "select2"
-.select2-results__option
-  font-weight: bold
-  padding: 16px
-
 .form
   .h2
     color: white
@@ -918,12 +914,6 @@ nav
   padding: 16px
   margin: 0
   border-radius: 10px
-  .select2-container--default .select2-selection--single
-    border: none
-    outline: none
-  .select2-container .select2-selection--single .select2-selection__rendered
-    padding-left: 0
-    font-weight: bold
   .input-wrapper
     border-radius: 10px
     margin: 16px auto
@@ -964,11 +954,13 @@ nav
       font-family: "HeliosCond", Arial, sans-serif
       font-weight: bold
       outline: none
-      -webkit-appearance: none
-      -moz-appearance: none
-      appearance: none
+      padding: 22px 0
+      -webkit-appearance: menulist-button
       option
         font-weight: bold
+
+  .input-wrapper-select
+    padding: 0 16px !important
 
   input[type=submit]
     border: none

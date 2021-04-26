@@ -4,6 +4,11 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 document.documentElement.style.setProperty('--vh-start', `${vh}px`);
 
+let options = {
+    rootMargin: '0px',
+    threshold: 0.1
+}
+
 let padding = [];
 padding[320] = 10;
 padding[375] = 23;
@@ -127,7 +132,7 @@ jQuery(document).ready(function ($) {
             smartSpeed: 1000,
             startPosition: 1,
             slideTransition: 'ease-in-out',
-           //  URLhashListener:true
+            //  URLhashListener:true
         });
 
         let dNextSlide = $('#first').find('.desktop').find('.next-slide');
@@ -290,34 +295,6 @@ jQuery(document).ready(function ($) {
 
         });
 
-        let newsCarousel = $('#news-block .owl-carousel');
-
-        newsCarousel.owlCarousel({
-            dots: false,
-            margin: 30,
-            nav: false,
-            loop: true,
-            mouseDrag: false,
-            touchDrag: false,
-            smartSpeed: 1000,
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                1200: {
-                    items: 3
-                }
-            }
-        });
-
-        $('#news-block .prev-slide').click(function () {
-            newsCarousel.trigger('prev.owl.carousel');
-        });
-
-        $('#news-block .next-slide').click(function () {
-            newsCarousel.trigger('next.owl.carousel');
-        });
-
         // abit.html
         let openDaysCarousel = $('#open-days .owl-carousel');
 
@@ -349,79 +326,6 @@ jQuery(document).ready(function ($) {
     }
 
     $(window).scroll();
-
-    // инициализация карусели партнеры
-
-    let partnerCarousel = $("#partners .owl-carousel");
-
-    let pcOffset = 1;
-
-    function makeCenterBigger(event) {
-        if (document.documentElement.scrollWidth >= 1200) {
-            pcOffset = 4;
-        } else if (document.documentElement.scrollWidth >= 460) {
-            pcOffset = 2;
-        } else
-            pcOffset = 1;
-        let itemIndex = event.item.index + pcOffset;
-        let slideImages = $('#partners').find('.slide').find('img');
-        slideImages.removeClass('center-item');
-        slideImages.removeClass('side-item');
-        slideImages.eq(itemIndex).addClass('center-item');
-        if (document.documentElement.scrollWidth >= 1200) {
-            slideImages.eq(itemIndex - 1).addClass('side-item');
-            slideImages.eq(itemIndex + 1).addClass('side-item');
-        }
-    }
-
-    partnerCarousel.on('initialized.owl.carousel', function (event) {
-        makeCenterBigger(event);
-    });
-
-    partnerCarousel.on('translate.owl.carousel', function (event) {
-        makeCenterBigger(event);
-    });
-
-    partnerCarousel.on('resize.owl.carousel', function (event) {
-        makeCenterBigger(event);
-    });
-
-    partnerCarousel.owlCarousel({
-        dots: false,
-        margin: 0,
-        nav: false,
-        loop: true,
-        responsive: {
-            0: {
-                items: 3,
-                margin: 60
-            },
-            460: {
-                items: 5,
-                margin: 80
-            },
-            1200: {
-                items: 9,
-                margin: 80
-            },
-            1400: {
-                items: 9,
-                margin: 80
-            },
-            1700: {
-                items: 9,
-                margin: 80
-            }
-        }
-    });
-
-    $('#partners .prev-slide').click(function () {
-        partnerCarousel.trigger('prev.owl.carousel');
-    });
-
-    $('#partners .next-slide').click(function () {
-        partnerCarousel.trigger('next.owl.carousel');
-    });
 
     let graduatesCarousel = $('#graduates .owl-carousel');
 
@@ -563,85 +467,8 @@ jQuery(document).ready(function ($) {
         recommendationsCarousel.trigger('next.owl.carousel');
     });
 
-    let galleryCarouselTop = $('.gallery .owl-carousel-top');
-
-    galleryCarouselTop.owlCarousel({
-        dots: false,
-        margin: 30,
-        nav: false,
-        loop: true,
-        mouseDrag: false,
-        touchDrag: false,
-        smartSpeed: 1000,
-        items: 1,
-        lazyLoad: true
-    });
-
-    let galleryCarouselBottom = $('.gallery .owl-carousel-bottom');
-
-    galleryCarouselBottom.owlCarousel({
-        dots: false,
-        margin: 16,
-        nav: false,
-        loop: true,
-        mouseDrag: false,
-        touchDrag: false,
-        smartSpeed: 1000,
-        responsive: {
-            0: {
-                items: 4,
-                margin: 16
-            },
-            1200: {
-                items: 6,
-                margin: 32
-            }
-        }
-    });
-
-    $('.gallery .prev-slide').click(function () {
-        galleryCarouselTop.trigger('prev.owl.carousel');
-        galleryCarouselBottom.trigger('prev.owl.carousel');
-    });
-
-    $('.gallery .next-slide').click(function () {
-        galleryCarouselTop.trigger('next.owl.carousel');
-        galleryCarouselBottom.trigger('next.owl.carousel');
-    });
-
     // увеличение картинки в карусели партнеров
     // document.getElementById("partners").getElementsByClassName("slide")[0].getBoundingClientRect();
-
-    ymaps.ready(init);
-
-    function init() {
-        let myMap = new ymaps.Map("map", {
-                center: [55.665477, 37.473303],
-                zoom: 15
-            }),
-
-            // Создаем метку с помощью вспомогательного класса.
-            myPlacemark1 = new ymaps.Placemark([55.665477, 37.473303], {
-                // Свойства.
-                // Содержимое хинта.
-                hintContent: 'Надпись, которая всплывает при наведении на метку. Она вообще тут нужна?'
-            }, {
-                // Опции
-                // Своё изображение иконки метки.
-                iconImageHref: '/assets/img/map-marker.svg',
-                // Размеры метки.
-                iconImageSize: [80, 80],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-38, -70]
-            })
-
-
-        // Добавляем все метки на карту.
-        myMap.geoObjects
-            .add(myPlacemark1)
-
-    }
 
     // анимации
     const animateCSS = (element, animation, prefix = 'animate__') =>
@@ -785,3 +612,262 @@ jQuery(document).ready(function ($) {
 
     $(window).trigger("scroll")
 });
+
+window.onload = () => {
+    console.log("window is loaded");
+
+    function showPartnersCarousel() {
+        if ($("#partners").length > 0) {
+            let callback = (entries, observer) => {
+                entries.forEach(entry => {
+
+                    if (entry.intersectionRatio > 0) {
+                        let partnerCarousel = $("#partners .owl-carousel");
+
+                        let pcOffset = 1;
+
+                        function makeCenterBigger(event) {
+                            if (document.documentElement.scrollWidth >= 1200) {
+                                pcOffset = 4;
+                            } else if (document.documentElement.scrollWidth >= 460) {
+                                pcOffset = 2;
+                            } else
+                                pcOffset = 1;
+                            let itemIndex = event.item.index + pcOffset;
+                            let slideImages = $('#partners').find('.slide').find('img');
+                            slideImages.removeClass('center-item');
+                            slideImages.removeClass('side-item');
+                            slideImages.eq(itemIndex).addClass('center-item');
+                            if (document.documentElement.scrollWidth >= 1200) {
+                                slideImages.eq(itemIndex - 1).addClass('side-item');
+                                slideImages.eq(itemIndex + 1).addClass('side-item');
+                            }
+                        }
+
+                        partnerCarousel.on('initialized.owl.carousel', function (event) {
+                            makeCenterBigger(event);
+                        });
+
+                        partnerCarousel.on('translate.owl.carousel', function (event) {
+                            makeCenterBigger(event);
+                        });
+
+                        partnerCarousel.on('resize.owl.carousel', function (event) {
+                            makeCenterBigger(event);
+                        });
+
+                        partnerCarousel.owlCarousel({
+                            dots: false,
+                            margin: 0,
+                            nav: false,
+                            loop: true,
+                            responsive: {
+                                0: {
+                                    items: 3,
+                                    margin: 60
+                                },
+                                460: {
+                                    items: 5,
+                                    margin: 80
+                                },
+                                1200: {
+                                    items: 9,
+                                    margin: 80
+                                },
+                                1400: {
+                                    items: 9,
+                                    margin: 80
+                                },
+                                1700: {
+                                    items: 9,
+                                    margin: 80
+                                }
+                            }
+                        });
+
+                        $('#partners .prev-slide').click(function () {
+                            partnerCarousel.trigger('prev.owl.carousel');
+                        });
+
+                        $('#partners .next-slide').click(function () {
+                            partnerCarousel.trigger('next.owl.carousel');
+                        });
+
+                        observer.unobserve(target);
+                    }
+                });
+            };
+
+            let observer = new IntersectionObserver(callback, options);
+
+            let target = document.querySelector('#partners');
+
+            observer.observe(target);
+        }
+    }
+
+
+    showPartnersCarousel();
+
+    function showMap() {
+        if ($("#map").length > 0) {
+            let callback = (entries, observer) => {
+                entries.forEach(entry => {
+
+                    if (entry.intersectionRatio > 0) {
+                        ymaps.ready(init);
+
+                        function init() {
+                            let myMap = new ymaps.Map("map", {
+                                    center: [55.665477, 37.473303],
+                                    zoom: 15
+                                }),
+
+                                // Создаем метку с помощью вспомогательного класса.
+                                myPlacemark1 = new ymaps.Placemark([55.665477, 37.473303], {
+                                    // Свойства.
+                                    // Содержимое хинта.
+                                    hintContent: 'Надпись, которая всплывает при наведении на метку. Она вообще тут нужна?'
+                                }, {
+                                    // Опции
+                                    // Своё изображение иконки метки.
+                                    iconImageHref: '/assets/img/map-marker.svg',
+                                    // Размеры метки.
+                                    iconImageSize: [80, 80],
+                                    // Смещение левого верхнего угла иконки относительно
+                                    // её "ножки" (точки привязки).
+                                    iconImageOffset: [-38, -70]
+                                })
+
+
+                            // Добавляем все метки на карту.
+                            myMap.geoObjects
+                                .add(myPlacemark1)
+
+                        }
+
+                        observer.unobserve(target);
+                    }
+                });
+            };
+
+            let observer = new IntersectionObserver(callback, options);
+            let target = document.querySelector('#map');
+            observer.observe(target);
+        }
+    }
+
+    showMap();
+
+    function showNewsBlock() {
+        if ($("#news-block").length > 0) {
+            let callback = (entries, observer) => {
+                entries.forEach(entry => {
+
+                    if (entry.intersectionRatio > 0) {
+                        let newsCarousel = $('#news-block .owl-carousel');
+
+                        newsCarousel.owlCarousel({
+                            dots: false,
+                            margin: 30,
+                            nav: false,
+                            loop: true,
+                            mouseDrag: false,
+                            touchDrag: false,
+                            smartSpeed: 1000,
+                            responsive: {
+                                0: {
+                                    items: 1,
+                                },
+                                1200: {
+                                    items: 3
+                                }
+                            }
+                        });
+
+                        $('#news-block .prev-slide').click(function () {
+                            newsCarousel.trigger('prev.owl.carousel');
+                        });
+
+                        $('#news-block .next-slide').click(function () {
+                            newsCarousel.trigger('next.owl.carousel');
+                        });
+
+                        observer.unobserve(target);
+                    }
+                });
+            };
+
+            let observer = new IntersectionObserver(callback, options);
+            let target = document.querySelector('#news-block');
+            observer.observe(target);
+        }
+    }
+
+    showNewsBlock();
+
+    function showGallery() {
+        if ($(".gallery").length > 0) {
+            let callback = (entries, observer) => {
+                entries.forEach(entry => {
+
+                    if (entry.intersectionRatio > 0) {
+                        let galleryCarouselTop = $('.gallery .owl-carousel-top');
+
+                        galleryCarouselTop.owlCarousel({
+                            dots: false,
+                            margin: 30,
+                            nav: false,
+                            loop: true,
+                            mouseDrag: false,
+                            touchDrag: false,
+                            smartSpeed: 1000,
+                            items: 1,
+                            lazyLoad: true
+                        });
+
+                        let galleryCarouselBottom = $('.gallery .owl-carousel-bottom');
+
+                        galleryCarouselBottom.owlCarousel({
+                            dots: false,
+                            margin: 16,
+                            nav: false,
+                            loop: true,
+                            mouseDrag: false,
+                            touchDrag: false,
+                            smartSpeed: 1000,
+                            responsive: {
+                                0: {
+                                    items: 4,
+                                    margin: 16
+                                },
+                                1200: {
+                                    items: 6,
+                                    margin: 32
+                                }
+                            }
+                        });
+
+                        $('.gallery .prev-slide').click(function () {
+                            galleryCarouselTop.trigger('prev.owl.carousel');
+                            galleryCarouselBottom.trigger('prev.owl.carousel');
+                        });
+
+                        $('.gallery .next-slide').click(function () {
+                            galleryCarouselTop.trigger('next.owl.carousel');
+                            galleryCarouselBottom.trigger('next.owl.carousel');
+                        });
+
+                        observer.unobserve(target);
+                    }
+                });
+            };
+
+            let observer = new IntersectionObserver(callback, options);
+            let target = document.querySelector('.gallery');
+            observer.observe(target);
+        }
+    }
+
+    showGallery();
+}
