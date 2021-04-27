@@ -455,8 +455,6 @@ main ul {
   .button.red {
     color: #ffffff;
     background-color: var(--red); }
-  .button:disabled, .button[disabled] {
-    opacity: 0.5; }
 
 .h4-underlined {
   border-bottom: 1px solid var(--red);
@@ -875,9 +873,9 @@ nav {
       font-size: 16px;
       line-height: 24px; }
 
-.dark header .logos div.ranepa {
+.dark header .logos a.ranepa {
   background-image: url("../img/white-ranepa-logo.png"); }
-.dark header .logos div.msi {
+.dark header .logos a.msi {
   background-image: url("../img/white-msi-logo.png"); }
 .dark header .header-buttons .mdi-visibility {
   background-image: url("../img/white-mdi-visibility.svg"); }
@@ -971,7 +969,8 @@ nav {
   .special-programs .container {
     padding-top: 0; }
   .special-programs h2, .special-programs .h2 {
-    margin: 32px 0; }
+    margin: 32px 0;
+    width: 100%; }
   .special-programs .button {
     margin-bottom: 0; }
 
@@ -2134,6 +2133,8 @@ body.compensate-for-scrollbar {
     .error-page main > .container .button {
       margin: 32px 0 0; }
 
+.e-404 .header-buttons {
+  display: none !important; }
 .e-404 main {
   background-image: url("../img/404-bg.jpg"); }
   .e-404 main > .container h1, .e-404 main > .container .h1 {
