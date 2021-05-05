@@ -530,7 +530,6 @@ ul li.red-marker::before {
   padding-bottom: 32px; }
 
 header {
-  height: 159px;
   width: 100%;
   position: sticky;
   top: 0;
@@ -555,7 +554,18 @@ header {
     -moz-transition: all 0.1s linear;
     -ms-transition: all 0.1s linear;
     -o-transition: all 0.1s linear;
-    transition: all 0.1s linear; }
+    transition: all 0.1s linear;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%); }
+    header .bg.show {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0); }
     header .bg.bg-blue {
       -webkit-transform: translateX(100%);
       -moz-transform: translateX(100%);
@@ -573,7 +583,23 @@ header {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear; }
+    header .wrapper.show {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0); }
     header .wrapper .logos {
       width: 100%;
       display: flex;
@@ -639,17 +665,74 @@ header {
         background-image: url("../img/menu-button.svg");
         cursor: pointer; }
   header.white .wrapper .logos .ranepa {
-    background-image: url("../img/ranepa-logo.png"); }
+    background-image: url("../img/ranepa-logo.png") !important; }
   header.white .wrapper .logos .msi {
-    background-image: url("../img/msi-logo.png"); }
+    background-image: url("../img/msi-logo.png") !important; }
   header.white .wrapper .header-buttons .mdi-visibility {
-    background-image: url("../img/mdi-visibility.svg"); }
+    background-image: url("../img/mdi-visibility.svg") !important; }
   header.white .wrapper .header-buttons .account {
-    background-image: url("../img/account.svg"); }
+    background-image: url("../img/account.svg") !important; }
   header.white .wrapper .header-buttons .menu-button {
-    background-image: url("../img/menu-button.svg"); }
+    background-image: url("../img/menu-button.svg") !important; }
   header.white .wrapper .header-buttons .lang-button {
-    color: var(--black); }
+    color: var(--black) !important; }
+    header.white .wrapper .header-buttons .lang-button.active {
+      color: var(--red) !important; }
+  header .mobile-wrapper {
+    padding: 16px 10px;
+    position: absolute;
+    width: 100%;
+    height: 85px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear; }
+    header .mobile-wrapper.show {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0); }
+    header .mobile-wrapper .logos {
+      width: 50%;
+      display: flex; }
+      header .mobile-wrapper .logos a {
+        width: 48px;
+        height: 48px;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat; }
+      header .mobile-wrapper .logos .ranepa {
+        background-image: url("../img/ranepa-logo-short.png");
+        margin-right: 16px; }
+      header .mobile-wrapper .logos .msi {
+        background-image: url("../img/msi-logo-short.png");
+        background-position: left center; }
+    header .mobile-wrapper .header-buttons {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end; }
+      header .mobile-wrapper .header-buttons .mdi-visibility {
+        background-image: url("../img/mdi-visibility.svg");
+        width: 48px;
+        height: 48px;
+        display: block;
+        margin-right: 16px; }
+      header .mobile-wrapper .header-buttons .menu-button {
+        width: 48px;
+        height: 48px;
+        background-image: url("../img/menu-button.svg"); }
 
 .nav-outer {
   position: fixed;
@@ -734,6 +817,24 @@ nav {
 
 .menu-active {
   overflow: hidden; }
+  .menu-active header .wrapper {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
+  .menu-active header .mobile-wrapper.show {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  .menu-active header .bg {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
   .menu-active header .bg.bg-blue {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
@@ -873,17 +974,17 @@ nav {
       font-size: 16px;
       line-height: 24px; }
 
-.dark header .logos a.ranepa {
+.dark header .wrapper .logos a.ranepa {
   background-image: url("../img/white-ranepa-logo.png"); }
-.dark header .logos a.msi {
+.dark header .wrapper .logos a.msi {
   background-image: url("../img/white-msi-logo.png"); }
-.dark header .header-buttons .mdi-visibility {
+.dark header .wrapper .header-buttons .mdi-visibility {
   background-image: url("../img/white-mdi-visibility.svg"); }
-.dark header .header-buttons .account {
+.dark header .wrapper .header-buttons .account {
   background-image: url("../img/white-account.svg"); }
-.dark header .header-buttons .menu-button {
+.dark header .wrapper .header-buttons .menu-button {
   background-image: url("../img/white-menu-button.svg"); }
-.dark header .header-buttons .lang-button {
+.dark header .wrapper .header-buttons .lang-button {
   color: #ffffff; }
 .dark .first-sec .navigation .progress-text {
   color: #fff; }
@@ -919,17 +1020,17 @@ nav {
         .small-menu header .wrapper .header-buttons .button-wrapper .account {
           width: 0; }
 
-  .menu-active header .wrapper .logos div.ranepa {
+  .menu-active header .wrapper .logos a.ranepa {
     background-image: url("../img/white-ranepa-logo.png") !important; }
-  .menu-active header .wrapper .logos div.msi {
+  .menu-active header .wrapper .logos a.msi {
     background-image: url("../img/white-msi-logo.png") !important; } }
-.menu-active header .header-buttons .mdi-visibility {
+.menu-active header .wrapper .header-buttons .mdi-visibility {
   background-image: url("../img/white-mdi-visibility.svg") !important; }
-.menu-active header .header-buttons .account {
+.menu-active header .wrapper .header-buttons .account {
   background-image: url("../img/white-account.svg") !important; }
-.menu-active header .header-buttons .menu-button {
+.menu-active header .wrapper .header-buttons .menu-button {
   background-image: url("../img/white-menu-button.svg") !important; }
-.menu-active header .header-buttons .lang-button {
+.menu-active header .wrapper .header-buttons .lang-button {
   color: #ffffff !important; }
 
 .higher-edu .container {
@@ -2783,15 +2884,15 @@ body.compensate-for-scrollbar {
         width: 45px;
         height: 34px; }
 
-  header {
-    height: 195px; }
-    header .wrapper {
-      padding: 32px 23px; }
-      header .wrapper .logos div {
-        width: 150px;
-        height: 51px; }
-    header .header-buttons .lang-buttons {
-      padding-right: 32px; }
+  header .wrapper {
+    padding: 32px 23px; }
+    header .wrapper .logos div {
+      width: 150px;
+      height: 51px; }
+  header .header-buttons .lang-buttons {
+    padding-right: 32px; }
+  header .mobile-wrapper {
+    padding: 16px 23px; }
 
   .first-sec .carousel .slide.container {
     padding: 195px 23px 156px; }
@@ -2922,42 +3023,40 @@ body.compensate-for-scrollbar {
       .description-with-fade-in-right-images .msi-fade-in-right-pictures img {
         width: 25%; }
 
-  header {
-    height: 95px; }
-    header .wrapper {
-      padding: 32px 0; }
-      header .wrapper .logos {
-        width: 45%;
-        justify-content: flex-start;
-        height: 30px; }
-        header .wrapper .logos div {
-          width: 95px;
-          height: 30px;
-          -webkit-transition: all 1s ease-in-out;
-          -moz-transition: all 1s ease-in-out;
-          -ms-transition: all 1s ease-in-out;
-          -o-transition: all 1s ease-in-out;
-          transition: all 1s ease-in-out; }
-        header .wrapper .logos .ranepa {
-          margin-right: 32px; }
-      header .wrapper .header-buttons {
-        width: 55%;
-        margin: 0; }
-        header .wrapper .header-buttons .button-wrapper {
-          justify-content: flex-end; }
-        header .wrapper .header-buttons .menu-button, header .wrapper .header-buttons .account, header .wrapper .header-buttons .mdi-visibility {
-          width: 32px;
-          height: 32px;
-          margin-left: 32px; }
-        header .wrapper .header-buttons a {
-          font-size: 22px;
-          line-height: 34px; }
-        header .wrapper .header-buttons * {
-          -webkit-transition: all 1s ease-in-out;
-          -moz-transition: all 1s ease-in-out;
-          -ms-transition: all 1s ease-in-out;
-          -o-transition: all 1s ease-in-out;
-          transition: all 1s ease-in-out; }
+  header .wrapper {
+    padding: 32px 0; }
+    header .wrapper .logos {
+      width: 45%;
+      justify-content: flex-start;
+      height: 30px; }
+      header .wrapper .logos div {
+        width: 95px;
+        height: 30px;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out; }
+      header .wrapper .logos .ranepa {
+        margin-right: 32px; }
+    header .wrapper .header-buttons {
+      width: 55%;
+      margin: 0; }
+      header .wrapper .header-buttons .button-wrapper {
+        justify-content: flex-end; }
+      header .wrapper .header-buttons .menu-button, header .wrapper .header-buttons .account, header .wrapper .header-buttons .mdi-visibility {
+        width: 32px;
+        height: 32px;
+        margin-left: 32px; }
+      header .wrapper .header-buttons a {
+        font-size: 22px;
+        line-height: 34px; }
+      header .wrapper .header-buttons * {
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out; }
 
   main ul li {
     font-size: 14px;
@@ -3566,18 +3665,16 @@ body.compensate-for-scrollbar {
   .container, header .wrapper {
     width: 1286px; }
 
-  header {
-    height: 105px; }
-    header .wrapper {
-      padding: 32px 0; }
-      header .wrapper .header-buttons .menu-button, header .wrapper .header-buttons .account, header .wrapper .header-buttons .mdi-visibility {
-        width: 40px;
+  header .wrapper {
+    padding: 32px 0; }
+    header .wrapper .header-buttons .menu-button, header .wrapper .header-buttons .account, header .wrapper .header-buttons .mdi-visibility {
+      width: 40px;
+      height: 40px; }
+    header .wrapper .logos {
+      height: 40px; }
+      header .wrapper .logos div {
+        width: 105px;
         height: 40px; }
-      header .wrapper .logos {
-        height: 40px; }
-        header .wrapper .logos div {
-          width: 105px;
-          height: 40px; }
 
   nav {
     padding: 108px 0 0;
@@ -3762,18 +3859,16 @@ body.compensate-for-scrollbar {
     line-height: 46px; }
 
   .index-page main {
-    margin-top: -148px; }
+    margin-top: -132px; }
 
   .container, header .wrapper {
     width: 1426px; }
 
-  header {
-    height: 148px; }
-    header .wrapper .logos {
+  header .wrapper .logos {
+    height: 68px; }
+    header .wrapper .logos div {
+      width: 206px;
       height: 68px; }
-      header .wrapper .logos div {
-        width: 206px;
-        height: 68px; }
 
   nav {
     padding: 151px 0 0;

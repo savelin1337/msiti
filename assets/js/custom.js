@@ -69,6 +69,10 @@ jQuery(document).ready(function ($) {
     });
 
     if (document.documentElement.scrollWidth < 1200) {
+        let mobileWrapper = $('.mobile-wrapper');
+        let wrapper = $('header .wrapper');
+        let lastScroll = window.scrollY;
+        let bg = $('header .bg-white')
         // мобильные
         let firstCarousel = $('#first').find('.mobile').find('.owl-carousel');
         let progressText = $('.progress-text');
@@ -110,6 +114,23 @@ jQuery(document).ready(function ($) {
                 setDark(false);
             }
         });
+
+        $(window).scroll(function () {
+            if (window.scrollY > 150) {
+                if (lastScroll < window.scrollY) { // down
+                    mobileWrapper.addClass('show');
+                    wrapper.removeClass('show');
+                    bg.removeClass('show');
+                } else {
+                    mobileWrapper.removeClass('show');
+                    wrapper.addClass('show');
+                    bg.addClass('show');
+                }
+            }
+            lastScroll = window.scrollY;
+        });
+
+
     } else {
         // десктоп
         let firstCarouselDesktop = $('#first').find('.desktop').find('.owl-carousel');

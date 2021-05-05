@@ -229,7 +229,6 @@ ul li.red-marker::before
   .left
     padding-bottom: 32px
 header
-  height: 159px
   width: 100%
   position: sticky
   top: 0
@@ -255,6 +254,17 @@ header
     -ms-transition: all .1s linear
     -o-transition: all .1s linear
     transition: all .1s linear
+    -webkit-transform: translateY(-100%)
+    -moz-transform: translateY(-100%)
+    -ms-transform: translateY(-100%)
+    -o-transform: translateY(-100%)
+    transform: translateY(-100%)
+    &.show
+      -webkit-transform: translateY(0)
+      -moz-transform: translateY(0)
+      -ms-transform: translateY(0)
+      -o-transform: translateY(0)
+      transform: translateY(0)
     &.bg-blue
       -webkit-transform: translateX(100%)
       -moz-transform: translateX(100%)
@@ -273,6 +283,22 @@ header
     flex-wrap: wrap
     position: relative
     z-index: 1
+    -webkit-transform: translateY(-100%)
+    -moz-transform: translateY(-100%)
+    -ms-transform: translateY(-100%)
+    -o-transform: translateY(-100%)
+    transform: translateY(-100%)
+    -webkit-transition: all .1s linear
+    -moz-transition: all .1s linear
+    -ms-transition: all .1s linear
+    -o-transition: all .1s linear
+    transition: all .1s linear
+    &.show
+      -webkit-transform: translateY(0)
+      -moz-transform: translateY(0)
+      -ms-transform: translateY(0)
+      -o-transform: translateY(0)
+      transform: translateY(0)
 
     .logos
       width: 100%
@@ -343,18 +369,77 @@ header
     .wrapper
       .logos
         .ranepa
-          background-image: url("../img/ranepa-logo.png")
+          background-image: url("../img/ranepa-logo.png") !important
         .msi
-          background-image: url("../img/msi-logo.png")
+          background-image: url("../img/msi-logo.png") !important
       .header-buttons
         .mdi-visibility
-          background-image: url("../img/mdi-visibility.svg")
+          background-image: url("../img/mdi-visibility.svg") !important
         .account
-          background-image: url("../img/account.svg")
+          background-image: url("../img/account.svg") !important
         .menu-button
-          background-image: url("../img/menu-button.svg")
+          background-image: url("../img/menu-button.svg") !important
         .lang-button
-          color: var(--black)
+          color: var(--black) !important
+          &.active
+            color: var(--red) !important
+
+  .mobile-wrapper
+    padding: 16px 10px
+    position: absolute
+    width: 100%
+    height: 85px
+    background: white
+    display: flex
+    justify-content: space-between
+    align-items: center
+    top: 0
+    -webkit-transform: translateY(-100%)
+    -moz-transform: translateY(-100%)
+    -ms-transform: translateY(-100%)
+    -o-transform: translateY(-100%)
+    transform: translateY(-100%)
+    -webkit-transition: all .1s linear
+    -moz-transition: all .1s linear
+    -ms-transition: all .1s linear
+    -o-transition: all .1s linear
+    transition: all .1s linear
+    &.show
+      -webkit-transform: translateY(0)
+      -moz-transform: translateY(0)
+      -ms-transform: translateY(0)
+      -o-transform: translateY(0)
+      transform: translateY(0)
+    .logos
+      width: 50%
+      display: flex
+      a
+        width: 48px
+        height: 48px
+        display: block
+        background-size: contain
+        background-repeat: no-repeat
+      .ranepa
+        background-image: url("../img/ranepa-logo-short.png")
+        margin-right: 16px
+      .msi
+        background-image: url("../img/msi-logo-short.png")
+        background-position: left center
+
+    .header-buttons
+      width: 50%
+      display: flex
+      justify-content: flex-end
+      .mdi-visibility
+        background-image: url("../img/mdi-visibility.svg")
+        width: 48px
+        height: 48px
+        display: block
+        margin-right: 16px
+      .menu-button
+        width: 48px
+        height: 48px
+        background-image: url("../img/menu-button.svg")
 
 .nav-outer
   position: fixed
@@ -441,6 +526,28 @@ nav
 .menu-active
   overflow: hidden
   header
+    .wrapper
+      -webkit-transform: translateY(0)
+      -moz-transform: translateY(0)
+      -ms-transform: translateY(0)
+      -o-transform: translateY(0)
+      transform: translateY(0)
+
+    .mobile-wrapper
+      &.show
+        -webkit-transform: translateY(-100%)
+        -moz-transform: translateY(-100%)
+        -ms-transform: translateY(-100%)
+        -o-transform: translateY(-100%)
+        transform: translateY(-100%)
+
+    .bg
+      -webkit-transform: translateY(0)
+      -moz-transform: translateY(0)
+      -ms-transform: translateY(0)
+      -o-transform: translateY(0)
+      transform: translateY(0)
+
     .bg.bg-blue
       -webkit-transform: translateX(0)
       -moz-transform: translateX(0)
@@ -574,21 +681,22 @@ nav
 
 .dark
   header
-    .logos
-      a
-        &.ranepa
-          background-image: url("../img/white-ranepa-logo.png")
-        &.msi
-          background-image: url("../img/white-msi-logo.png")
-    .header-buttons
-      .mdi-visibility
-        background-image: url("../img/white-mdi-visibility.svg")
-      .account
-        background-image: url("../img/white-account.svg")
-      .menu-button
-        background-image: url("../img/white-menu-button.svg")
-      .lang-button
-        color: #ffffff
+    .wrapper
+      .logos
+        a
+          &.ranepa
+            background-image: url("../img/white-ranepa-logo.png")
+          &.msi
+            background-image: url("../img/white-msi-logo.png")
+      .header-buttons
+        .mdi-visibility
+          background-image: url("../img/white-mdi-visibility.svg")
+        .account
+          background-image: url("../img/white-account.svg")
+        .menu-button
+          background-image: url("../img/white-menu-button.svg")
+        .lang-button
+          color: #ffffff
   .first-sec
     .navigation
       .progress-text
@@ -631,7 +739,7 @@ nav
     header
       .wrapper
         .logos
-          div
+          a
             &.ranepa
               background-image: url("../img/white-ranepa-logo.png") !important
             &.msi
@@ -640,15 +748,16 @@ nav
 
 .menu-active
   header
-    .header-buttons
-      .mdi-visibility
-        background-image: url("../img/white-mdi-visibility.svg") !important
-      .account
-        background-image: url("../img/white-account.svg") !important
-      .menu-button
-        background-image: url("../img/white-menu-button.svg") !important
-      .lang-button
-        color: #ffffff !important
+    .wrapper
+      .header-buttons
+        .mdi-visibility
+          background-image: url("../img/white-mdi-visibility.svg") !important
+        .account
+          background-image: url("../img/white-account.svg") !important
+        .menu-button
+          background-image: url("../img/white-menu-button.svg") !important
+        .lang-button
+          color: #ffffff !important
 
 
 .higher-edu
