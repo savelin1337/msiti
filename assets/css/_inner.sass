@@ -113,6 +113,9 @@
     line-height: 28px
   .project-workgroup
     a
+      display: block
+      margin-top: 32px
+      margin-bottom: 0
       color: var(--red)
 .partners
   .row
@@ -476,12 +479,29 @@
 
 
 .higher-1, .cpe-1
+  span
+    color: var(--red)
   .description-with-fade-in-right-images
     h2, .h2
       margin: 0 0 48px
   .left
     padding-bottom: 48px
 
+.list-with-levels
+  margin: 0 0 32px
+  li
+    padding-left: 34px
+    font-weight: bold
+  .level-1
+    margin-top: 16px
+    &:before
+      background-color: var(--red)
+    padding-left: 18px
+    color: var(--red)
+
+.program-name
+  span
+    color: var(--red)
 .container.header
   padding: 0
 
@@ -489,11 +509,22 @@
   p.cost
     font-size: 22px
     line-height: 34px
+    span
+      color: var(--red)
   .module
-    font-size: 18px
-    line-height: 28px
-    font-weight: bold
-    margin: 16px 0
+    p
+      strong
+        font-size: 18px
+        line-height: 28px
+        font-weight: bold
+        margin: 16px 0
+    span
+      color: var(--red)
+
+  .edu-form
+    span
+      color: var(--red)
+      font-weight: bold
 
 .course-info
   .container

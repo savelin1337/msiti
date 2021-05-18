@@ -466,7 +466,7 @@ main ul {
 .desktop {
   display: none; }
 
-.red-marker ul li::before {
+ul.red-marker li::before {
   background-color: var(--red); }
 
 .card {
@@ -1039,7 +1039,7 @@ nav {
   margin-bottom: 32px; }
 
 .cpe-programs h3, .cpe-programs .h3 {
-  margin: 0 0 48px;
+  margin: 0 0 32px;
   font-size: 30px;
   line-height: 46px; }
 .cpe-programs .program {
@@ -2191,6 +2191,14 @@ body.compensate-for-scrollbar {
 .popup-login .form {
   padding: 48px 16px; }
 
+.page a {
+  color: var(--red);
+  font-weight: bold; }
+
+.breadcrumbs a {
+  color: inherit;
+  font-weight: normal; }
+
 .breadcrumbs {
   font-size: 22px;
   line-height: 34px;
@@ -2296,6 +2304,9 @@ body.compensate-for-scrollbar {
   font-size: 18px;
   line-height: 28px; }
 .project .project-workgroup a {
+  display: block;
+  margin-top: 32px;
+  margin-bottom: 0;
   color: var(--red); }
 
 .partners .row {
@@ -2623,10 +2634,27 @@ body.compensate-for-scrollbar {
 .page.higher-education .postgraduate .h2-wrapper h4, .page.higher-education .postgraduate .h2-wrapper .h4 {
   margin-bottom: 16px; }
 
+.higher-1 span, .cpe-1 span {
+  color: var(--red); }
 .higher-1 .description-with-fade-in-right-images h2, .higher-1 .description-with-fade-in-right-images .h2, .cpe-1 .description-with-fade-in-right-images h2, .cpe-1 .description-with-fade-in-right-images .h2 {
   margin: 0 0 48px; }
 .higher-1 .left, .cpe-1 .left {
   padding-bottom: 48px; }
+
+.list-with-levels {
+  margin: 0 0 32px; }
+  .list-with-levels li {
+    padding-left: 34px;
+    font-weight: bold; }
+  .list-with-levels .level-1 {
+    margin-top: 16px;
+    padding-left: 18px;
+    color: var(--red); }
+    .list-with-levels .level-1:before {
+      background-color: var(--red); }
+
+.program-name span {
+  color: var(--red); }
 
 .container.header {
   padding: 0; }
@@ -2634,11 +2662,18 @@ body.compensate-for-scrollbar {
 .page.cpe-programs p.cost {
   font-size: 22px;
   line-height: 34px; }
-.page.cpe-programs .module {
+  .page.cpe-programs p.cost span {
+    color: var(--red); }
+.page.cpe-programs .module p strong {
   font-size: 18px;
   line-height: 28px;
   font-weight: bold;
   margin: 16px 0; }
+.page.cpe-programs .module span {
+  color: var(--red); }
+.page.cpe-programs .edu-form span {
+  color: var(--red);
+  font-weight: bold; }
 
 .course-info .container {
   padding-top: 0; }
@@ -3032,7 +3067,12 @@ body.compensate-for-scrollbar {
     -o-transform: translateY(0);
     transform: translateY(0); }
   header .wrapper {
-    padding: 32px 0; }
+    padding: 32px 0;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
     header .wrapper .logos {
       width: 45%;
       justify-content: flex-start;
@@ -3415,9 +3455,9 @@ body.compensate-for-scrollbar {
     .cpe-programs .container {
       padding: 0; }
     .cpe-programs h2, .cpe-programs .h2 {
-      width: 30%;
       padding: 48px 0;
-      margin: 0; }
+      margin: 0;
+      width: 50%; }
     .cpe-programs .wrapper {
       position: absolute;
       width: 40%;
@@ -3531,8 +3571,8 @@ body.compensate-for-scrollbar {
       transform: translateX(200%); }
     .advantages .advantage:nth-child(odd) .main-container {
       justify-content: flex-end; }
-      .advantages .advantage:nth-child(odd) .main-container .img-wrapper {
-        right: 50%; }
+    .advantages .advantage:nth-child(odd) .img-wrapper {
+      right: 50%; }
 
   .graduates .slide {
     height: 750px; }
@@ -4065,6 +4105,9 @@ body.compensate-for-scrollbar {
   .e-under-construction main {
     background-image: url("../img/under-construction-bg-desktop.jpg"); }
 
+  .project-center-msiti ._desc {
+    margin-top: 32px;
+    margin-bottom: 48px; }
   .project-center-msiti .right.msi-fade-in-right-pictures {
     margin-bottom: 0; }
     .project-center-msiti .right.msi-fade-in-right-pictures img {
@@ -4326,7 +4369,7 @@ body.compensate-for-scrollbar {
       width: 35%; }
 
   .cpe-1 .container .left {
-    width: 65%;
+    width: 50%;
     padding-right: 16px; }
 
   .page.higher-education .advantages .advantage {
@@ -4356,7 +4399,7 @@ body.compensate-for-scrollbar {
     padding: 32px; }
   .page.cpe-programs .h2-wrapper {
     width: 50%; }
-  .page.cpe-programs .module {
+  .page.cpe-programs .module p strong {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 16px; }
@@ -4462,7 +4505,7 @@ body.compensate-for-scrollbar {
   .page.cpe-programs h4.first-header, .page.cpe-programs .h4.first-header {
     font-size: 46px;
     line-height: 68px; }
-  .page.cpe-programs .module {
+  .page.cpe-programs .module p strong {
     font-size: 18px;
     line-height: 28px; }
   .page.cpe-programs p.cost {
@@ -4605,7 +4648,7 @@ body.compensate-for-scrollbar {
   .page.cpe-programs p.cost {
     font-size: 46px;
     line-height: 68px; }
-  .page.cpe-programs .module {
+  .page.cpe-programs .module p strong {
     font-size: 26px;
     line-height: 40px; }
 
